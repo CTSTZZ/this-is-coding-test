@@ -7,25 +7,26 @@ n,m = map(int, input().split())
 graph = [[] for _ in range(n+1)]
 for _ in range(m) :
     i,a,b = map(int, input().split())
-    graph[i].append((a,b))
+    graph[i].append((a,b))  # graph [ [] , [(2,2) , (3,2) , (4,1) , (5,10)] , [ (4,2) ] , [ (4.1) , (5,1)]  ...... ]
 
 def solution(city) :
     cost = [100000] * (n+1) # 최단비용 세팅
+    # cost = [ 100000, 0, 2, 3, 1, 4 ] #1번도시
     
     cost[city] = 0
     
     q = []
-    heapq.heappush(q, (0,city))    
+    heapq.heappush(q, (0,city))    # q = [(0,city = 1)]
 
     while q :
-        won, now = heapq.heappop(q)
-        if cost[now] < won :
+        won, now = heapq.heappop(q)  # won = 2 , now = 2
+        if cost[now] < won : # const[2] = 2 , won = 2
             continue
-        for i in graph[now] :
-            won = cost[now] + i[1]
-            if won < cost[i[0]] :
+        for i in graph[now] :  #  [(4,2)] 
+            won = cost[now] + i[1] # won = 2 + 2 = 4
+            if won < cost[i[0]] : # won cost[4] = 1 < 4
                 cost[i[0]] = won
-                heapq.heappush(q,(won,i[0]))
+                heapq.heappush(q,(won,i[0])) # q = [ (2,2) , (3,2) , (4,1) , (5,10) ]
     for i in range(len(cost)) :
         if cost[i] == 100000 :
             cost[i] = 0
