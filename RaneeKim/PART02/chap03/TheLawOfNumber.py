@@ -1,3 +1,4 @@
+
 n,m,k = map(int, input().split())
 data = []
 for i in range(0,n) :
