@@ -30,7 +30,7 @@
   </tr>
    <tr>
     <td align="center"><a href="https://github.com/깃헙아이디"><img src="https://avatars.githubusercontent.com/깃헙아이디" width="130px;" alt=""></a></td>
-    
+    <td align="center"><a href="https://github.com/bonasoobin"><img src="https://avatars.githubusercontent.com/bonasoobin" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/깃헙아이디"><img src="https://avatars.githubusercontent.com/깃헙아이디" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/Han-Yujin"><img src="https://avatars.githubusercontent.com/Han-Yujin" width="130px;" alt=""></a></td>
   </tr>
