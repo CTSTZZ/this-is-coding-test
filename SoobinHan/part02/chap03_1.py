@@ -25,3 +25,30 @@ def solution(n, m, k, data):
 
 solution(5,8,3,[2,4,5,4,6]) # 46
 
+
+'''
+수빈씨 어떻게 이런 생각을했나요...? 
+수빈씨의 코드에 감명받아 이행시와 함께 수정코드 올리겠습니다..
+
+수 : 수빈
+빈 : 천재
+
+def solution(n, m, k, data):
+    answer = 0
+    data.sort()
+    
+    b = m % k
+    
+    answer += (data[-1]) * (m - b)
+    answer += (data[-2]) * b
+    return int(answer)
+
+N,M,K = map(int, input().split())
+DATA = list(map(int, input()))
+
+result = solution(N,M,K,DATA)
+
+print(result)
+
+
+'''
