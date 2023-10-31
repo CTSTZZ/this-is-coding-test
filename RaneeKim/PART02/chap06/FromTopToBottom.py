@@ -30,13 +30,6 @@ for i in range(len(array)) : # for문을 두개 하는 이유는, 처음은 왼�
 '''
 기준데이터 설정 -> 기준데이터(Pivot)보다 큰 데이터와 작은 데이터의 위치를 바꾸는 방법
 일반적으로 첫번째 데이터를 Pivot으로 설정
-for i in range(len(array)) : 
-    for j in range(i+1,len(array)) :
-        if array[j] < array[-j] :
-            array[j], array[-j] = array[-j], array[j]
-        if j > (i+2)/2 :
-            k = int((i+2)/2)
-            array[i], array[k] = array[k], array[i]
 
 '''
 
