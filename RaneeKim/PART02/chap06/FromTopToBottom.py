@@ -44,4 +44,3 @@ def quick(data) :
     right = [i for i in tail if i > pivot] # 기준보다 큰 데이터는 오른쪽으로
 
     return [quick(left) + pivot + quick(right)] # 왼쪽과 오른쪽 나뉘어서 계속 함수 진행 그리고 왼쪽 + 기준 + 오른쪽 으로 리스트 정렬
-

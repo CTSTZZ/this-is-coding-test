@@ -22,5 +22,6 @@ for i in range(len(shop_parts)) : # 손님 문의 부품과
         if shop_parts[i] == parts[j] : # 비교후 있으면
             result[j] = 'yes' # 결과값을 yes로 변경
 
+
 for r in result : # 문제에서 원하는 출력값을 내주기 위한 코드
     print(r, end = ' ')
