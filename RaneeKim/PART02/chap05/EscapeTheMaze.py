@@ -1,13 +1,18 @@
-# bfs 왜 쓰는걸까...? 가장 가까운 길을 찾기 위해서....? 음료 얼려먹기는 모든 길을 가야함
+# bfs 왜 쓰는걸까...? 가장 가까운 길을 찾기 위해서....? 
+# 음료얼려먹기는 비교하면 재귀함수를 사용해서 갈 수 있는 칸을 가고 퍼지고 가고 퍼지고
+# bfs는 갈수 있는 길을 
 
 from collections import deque
+'''
 import sys
 input = sys.stdin.readline
+'''
 
 n,m = map(int, input().split())
 maze_map = []
 for _ in range(n) :
-    maze_map.append(list(map(int,input())))  # m을 for문, split()으로 받지않은 이유 : 입력예시때문
+    maze_map.append(list(map(int, input().split('\n'))))  # m을 for문, split()으로 받지않은 이유 : 입력예시때문
+    # 오류발생 -> 형태변환 문제인것같음
 
 dx = [-1,1,0,0] # 상하좌우
 dy = [0,0,-1,1]
@@ -31,9 +36,9 @@ def maze(x,y) :
             if maze_map[nx][ny] == 1 : # 해당노드를 처음 가는 경우에는 
                 maze_map[nx][ny] = maze_map[x][y] + 1 # +1을 더해라
                 queue.append((nx,ny))  # 큐에 해당 좌표를 넣어줘라
-                # 여기가 이해안가 어떻게 최소값을 반환하는거지 얘는....? -> 캡쳐본으로 설명
+                # 최소값만 반
         
     return maze_map[n-1][m-1]
 
 
-
+print(maze(0,0))
