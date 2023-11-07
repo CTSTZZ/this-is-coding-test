@@ -4,7 +4,7 @@ for i in range(0,8):
     if n == horizontality[i] :
         n = int(i)
 m = int(m)
-m = m-1        
+m = m-1   
 
 moving = [[-2,-1],[-2,1],[2,-1],[2,1],[-1,-2],[-1,2],[1,-2],[1,2]]
 count = 0
