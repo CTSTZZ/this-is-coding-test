@@ -2,7 +2,7 @@ import sys
 import time
 input = sys.stdin.readline
 
-s = input()
+s = input().strip()
 
 start_time = time.time()
 
