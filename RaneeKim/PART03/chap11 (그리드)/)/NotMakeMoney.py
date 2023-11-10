@@ -16,6 +16,8 @@ for c in coin :
 
 print(cannot)
 
+end = time.time
+print('time : ', end-start)
 '''
 cannot = 0
 
