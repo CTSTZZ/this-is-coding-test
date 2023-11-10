@@ -1,8 +1,8 @@
 import sys
 import time
-input = sys.stdin.readline # 마지막 /n까지 같이 출력이 되어서
+input = sys.stdin.readline 
 
-n = int(input().strip()) # strip()을 꼭 넣어줘야함
+n = int(input().strip()) 
 coin = list(map(int, input().split()))
 
 start = time.time

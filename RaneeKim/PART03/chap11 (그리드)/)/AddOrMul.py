@@ -1,8 +1,8 @@
 import sys
 import time
-input = sys.stdin.readline
+input = sys.stdin.readline # 마지막 /n까지 같이 출력이 되어서
 
-s = input().strip()
+s = input().strip() # 마지막 지워주는 strip같이 넣어야함
 
 start_time = time.time()
 
