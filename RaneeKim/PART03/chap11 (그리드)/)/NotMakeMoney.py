@@ -5,7 +5,7 @@ input = sys.stdin.readline
 n = int(input().strip()) 
 coin = list(map(int, input().split()))
 
-start = time.time
+start = time.time()
 
 coin.sort()
 cannot = 1
@@ -16,8 +16,10 @@ for c in coin :
 
 print(cannot)
 
-end = time.time
+end = time.time()
 print('time : ', end-start)
+
+
 '''
 cannot = 0
 
