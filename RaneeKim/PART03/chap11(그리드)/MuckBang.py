@@ -1,7 +1,53 @@
-food_time = list(map(int,input().split()))
-turning = int(input())
+import sys
+import time
+input = sys.stdin.readline
 
-# 프로그래머스 기준 정확도 통과, 효율성X
+food_time = list(map(int,input().split()))
+turning = int(input().strip())
+
+start = time.time()
+
+def solution (food_times,k) :
+    if sum(food_times) <= k :
+        return -1 
+
+    for t in range(len(food_times)) : 
+        if food_times[t] > 0 :
+            food_times[t] = food_times[t] - 1  
+            k -= 1   
+        else : continue
+        if k == 0 :  
+            t += 1 
+            for _ in range(len(food_times)) :
+                if t >= len(food_times): 
+                    t -= len(food_times)
+
+                if food_times[t] == 0 : 
+                    t += 1
+                elif food_times[t] > 0 : 
+                    return (t+1) 
+
+    if k > 0 :
+        return solution(food_times,k)
+
+solution (food_time,turning)
+end = time.time()
+print('time : ',end-start)
+
+
+'''
+>>> food_time = list(map(int,input().split()))
+3 2 1 3 2 7
+>>> turning = int(input().strip())
+15
+>>> solution (food_time,turning)
+6
+>>> end = time.time()
+>>> print('time : ',end-start)
+time :  0.19494891166687012
+'''
+
+''' 최종코드 : 프로그래머스 기준 정확도 통과, 효율성X
 
 def solution (food_times,k) :
     if sum(food_times) <= k : # 전체 음식시간이 방송시간보다 적으면 무조건 -1 반환
@@ -30,6 +76,8 @@ def solution (food_times,k) :
     # 함수에서는 for문이 한번 돌아감 따라서 먹방시간인 k가 다 지나지 않고 food_times의 for문이 끝날수도 있으니 그때는 재귀함수로 다시 호출
 
 solution (food_time,turning)
+
+'''
 
 ''' 첫번째 코드 : vs에서는 돌아가고 정답도 나오는데 프로그래머스에서 자꾸 틀렸다고함 ㅡㅡ 
                 return값으로 정답을 반환해야하는데 print로 해서 그런거 아닐까 의심중
