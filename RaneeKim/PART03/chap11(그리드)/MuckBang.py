@@ -21,12 +21,11 @@ def solution (food_times,k) :
             for _ in range(len(food_times)) :
                 if t >= len(food_times): 
                     t -= len(food_times)
-
                 if food_times[t] == 0 : 
                     t += 1
                 elif food_times[t] > 0 : 
                     return (t+1) 
-
+    
     if k > 0 :
         return solution(food_times,k)
 
