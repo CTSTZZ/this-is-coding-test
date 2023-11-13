@@ -12,7 +12,7 @@ n,m,k = input_weigt()
 
 for i in k : # 조건을 만족하지 않으면 다시 input받는 코드
     while n < 1 or n > 1000 or m < 1 or m > 10 or i < 1 or i > m  :
-        n,m,k = input_weigt() # 무한루프걸리긴함 왜일까,,,,,,
+        n,m,k = input_weigt() # 무한루프걸리긴함 왜일까,,,,,, # 럭키스트레이트에서 해결완
 
 start = time.time()
 
