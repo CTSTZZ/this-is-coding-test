@@ -18,7 +18,7 @@ def string_sort(S) :
                 n += int(ch)
         except Exception as e :
             st += ch
-    return(print(st,str(n)))
+    return(print(st,n,sep=""))
 
 s = input_S()
 start = time.time()
