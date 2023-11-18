@@ -6,11 +6,11 @@ input = sys.stdin.readline
 def input_N() :
     N = input().strip() 
     if 10 <= int(N) <= 99999999 and len(N)%2 == 0 : 
-        return int(N) 
+        return int(N) # 정수로 받으라고 적혀져있어서
     return (input_N())
 
 def Lucky(S) :
-    list_n = [int(n) for n in str(S)]
+    list_n = [int(n) for n in str(S)] # 각 자리수를 리스트 하나씩 넣도록 하려고
     count_l = count_r = 0
     for i in range(len(list_n)//2) :
         count_l += list_n[i]
