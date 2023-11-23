@@ -70,6 +70,6 @@ def snake() :
             direction = turn(direction, info[index][1])
             index += 1 # 다음 이동을 실행하라
     
-    return time # 시간을 치환
+    return time # 시간을 반환
 
 print(snake())
