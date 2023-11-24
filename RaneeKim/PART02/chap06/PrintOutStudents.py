@@ -11,23 +11,23 @@ def input_n() :
     return n, student
 
 def printout (student) :
-    student = dict(student)
-    student = dict(sorted(student.items(), key=lambda x:x[1]))
+    student = dict(sorted(dict(student).items(), key=lambda x:x[1]))
     result = list(student.keys())
 
-    return print(result)
+    for i in result :
+        print(i, end = ' ')
 
 
 n, student = input_n()
 printout(student)
 
+
 '''
 >>> n, student = input_n()
 3
-홍길동 70
-이순신 64
-유관순 85
+이순신 77
+유관순 63
+홍길동 95
 >>> printout(student)
-['이순신', '홍길동', '유관순']
-
+유관순 이순신 홍길동 >>> 
 '''
