@@ -20,5 +20,4 @@ def result() :
 
     return
 
-
 result()
