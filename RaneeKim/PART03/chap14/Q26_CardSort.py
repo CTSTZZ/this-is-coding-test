@@ -15,7 +15,8 @@ def card_sort() :
         if len(card) >=2 :
             card[1] = (card[0] + card[1])
             sum_s.append(card[1])
-            del card[0]            
+            del card[0]
+            card.sort()    # 최소값을 찾기 위해    
     
     return print(sum(sum_s))
 
