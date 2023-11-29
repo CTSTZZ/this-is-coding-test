@@ -9,7 +9,7 @@ def solution() :
     end = max(tteok)
     summ = 0
 
-    while sum != m :
+    while summ != m :
         summ = 0
         midd = (end+start)//2
         for i in tteok : 
