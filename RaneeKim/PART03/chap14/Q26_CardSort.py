@@ -21,3 +21,23 @@ def card_sort() :
     return print(sum(sum_s))
 
 card_sort()
+
+import heapq
+
+def answer() :
+    n = int(input().strip())
+    card = []
+    for i in range(n) :
+        data = int(input().strip())
+        heapq.heappush(card, data)
+    
+    result = 0
+    while len(card) > 1 :
+        one = heapq.heappop(card)
+        two = heapq.heappop(card)
+
+        result += (one + two)
+        heapq.heappush(card, one+two)
+
+    return print(result)
+
