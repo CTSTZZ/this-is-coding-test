@@ -14,7 +14,6 @@ def finding() :
 
 finding()
 
-
 def answer(array, start, end) :
     if start > end :
         return None # 재귀함수 끝나고도 고정점이 없으면 -1 반환
