@@ -36,7 +36,7 @@ def answer() :
         one = heapq.heappop(card)
         two = heapq.heappop(card)
 
-        result += (one + two)
+        result += (one + tw
         heapq.heappush(card, one+two)
 
     return print(result)

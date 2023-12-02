@@ -16,7 +16,7 @@ finding()
 
 def answer(array, start, end) :
     if start > end :
-        return None # 재귀함수 끝나고도 고정점이 없으면 -1 반환
+        return -1 # 재귀함수 끝나고도 고정점이 없으면 -1 반환
     mid = (start+end) // 2
     
     if array[mid] == mid :
@@ -29,5 +29,4 @@ def answer(array, start, end) :
 
 n= int(input().strip())
 num_list = sorted(list(map(int, input().split())))
-n, num_list
 answer(num_list, 0, n-1)

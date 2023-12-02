@@ -21,3 +21,11 @@ def result() :
     return
 
 result()
+
+
+def answer() :
+    n = int(input().strip())
+    antena = sorted(list(map(int, input().split())))
+
+    result = antena[(n-1)//2] # 중간값 찾는거
+    return result
