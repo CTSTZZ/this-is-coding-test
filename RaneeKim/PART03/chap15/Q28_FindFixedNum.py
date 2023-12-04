@@ -21,9 +21,11 @@ def answer(array, start, end) :
     
     if array[mid] == mid :
         return mid
-    elif array[mid] > mid : # 고정점이 array[mid]를 기준으로 왼쪽에 있음, 오름차순 정렬이기에 가능 ex) -15 1 4 7 9 -> 왼쪽편만본다
+    elif array[mid] > mid : 
+# 고정점이 array[mid]를 기준으로 왼쪽에 있음, 오름차순 정렬이기에 가능 ex) -15 1 4 7 9 -> 왼쪽편만본다
         return answer(array, start, mid-1)
-    else : # 고정점이 array[mid]를 기준으로 오른쪽에 있음 ex) -15 -14 1 3 7 -> 왼편만 본다
+    else :
+# 고정점이 array[mid]를 기준으로 오른쪽에 있음 ex) -15 -14 1 3 7 -> 왼편만 본다
         return answer(array, mid+1, end)
 
 
