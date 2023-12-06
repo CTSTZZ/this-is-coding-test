@@ -5,14 +5,17 @@ n = input().strip()
 strr = ''
 numm = 0
 for i in n :
-
     try : 
         if int(i) :
             numm += int(i)
     except :
         strr += i
+
+strr = sorted(strr)
+print(''.join(strr)+str(numm))
+
 result = ''
-for i in (sorted(strr)) :
+for i in (sorted(strr)) : 
     result += i
 
 print(result+str(numm))
