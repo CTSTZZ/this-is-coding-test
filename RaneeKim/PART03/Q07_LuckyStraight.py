@@ -1,4 +1,29 @@
 import sys
+input = sys.stdin.readline
+
+def solution() :
+    n = input().strip()
+    k = len(n) // 2
+
+    left = 0
+    right = 0
+    
+    for i in range(len(n)) :
+        if i < k :
+            left += int(n[i])
+        else :
+            right += int(n[i])
+    
+    if left == right :
+        return print("LUCKY")
+    else :
+        return print("READY")
+
+solution()
+
+
+'''
+import sys
 import time
 
 input = sys.stdin.readline
@@ -27,7 +52,6 @@ Lucky(n)
 end = time.time()
 print("time : ", end-start)
 
-'''
 >>> n = input_N()
 12345
 1234567898
