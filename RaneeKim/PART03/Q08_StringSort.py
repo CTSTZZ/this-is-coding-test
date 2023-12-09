@@ -1,4 +1,24 @@
 import sys
+input = sys.stdin.readline
+
+n = input().strip()
+strr = ''
+numm = 0
+for i in n :
+
+    try : 
+        if int(i) :
+            numm += int(i)
+    except :
+        strr += i
+result = ''
+for i in (sorted(strr)) :
+    result += i
+
+print(result+str(numm))
+
+'''
+import sys
 import time
 
 input = sys.stdin.readline
@@ -26,7 +46,7 @@ string_sort(s)
 end = time.time()
 print("time : ", end-start)
 
-'''
+
 >>> s = input_S()
 AJKDLSI412K4JSJ9D
 >>> string_sort(s)
