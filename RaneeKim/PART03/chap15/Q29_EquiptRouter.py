@@ -1,7 +1,7 @@
 def solution() :
-    n,c = map(int(input().split()))
+    n,c = map(int,input().split()) 
     router = []
-    for _ in range(n) :
+    for _ in range(n) : # 1 2 4 8 9 13 15 일때는 어쩌지..
         router.append(int(input().strip()))
     router.sort()
     

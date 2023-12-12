@@ -1,6 +1,6 @@
 n = int(input())
 
-array = list(mpa(int, input().split()))
+array = list(map(int, input().split()))
 d= [0] * 100
 
 d[0] = array[0]
