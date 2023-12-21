@@ -45,9 +45,9 @@ def dijkstra(start) :
             continue
         for i in graph[now] : # 현재노드와 연결된 다른 노드들 확인
             cost = dist + i[1] # 현재 노드를 거쳐서 다른 노드로 이동하는 경우
-        if cost < distance[i[0]] : # 그 경우가 start와 다른 노드로 이동하는 경우 보다 짧을 때
-            distance[i[0]] = cost
-            heapq.heappush(q, (cost,i[0])) # 
+            if cost < distance[i[0]] : # 그 경우가 start와 다른 노드로 이동하는 경우 보다 짧을 때
+                distance[i[0]] = cost
+                heapq.heappush(q, (cost,i[0])) # 
     
 dijkstra(start)
 
