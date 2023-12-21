@@ -25,7 +25,6 @@ for _ in range(m) :
     a,b,c = (map(int,input().split()))
     data.append((a,b,c))
 
-
 data.sort(key=lambda x:x[2])
 cheak = 0
 all_sum = 0
