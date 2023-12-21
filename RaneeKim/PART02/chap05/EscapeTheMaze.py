@@ -1,3 +1,47 @@
+from collections import deque
+
+
+def solution(x,y) :   
+
+    n,m = map(int, input().split())
+
+    maze = []
+    for _ in range(n) :
+        data = list(map(int,input()))
+        maze.append(data)
+
+    dx = [-1,1,0,0]
+    dy = [0,0,-1,1]
+
+    q = deque()
+    q.append((x,y))
+
+    while q :
+
+        a,b = q.popleft()
+        
+        for i in range(4) :
+            nx = a + dx[i]
+            ny = b + dy[i]
+
+            if nx < 0 or ny < 0 or nx >= n or ny >= m :
+                continue
+            if maze[nx][ny] == 0 :
+                continue
+            if maze[nx][ny] == 1 :
+                maze[nx][ny] = maze[a][b] + 1
+                q.append((nx,ny))
+
+    return maze[n-1][m-1]
+
+solution(0,0)
+
+
+
+                
+
+
+
 # bfs 왜 쓰는걸까...? 가장 가까운 길을 찾기 위해서....? 
 # 음료얼려먹기는 비교하면 재귀함수를 사용해서 갈 수 있는 칸을 가고 퍼지고 가고 퍼지고
 # bfs는 갈수 있는 길을 
