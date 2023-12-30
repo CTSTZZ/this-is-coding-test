@@ -20,19 +20,19 @@ x,k = map(int, input().split())
 
 count = 0
 
-def cheak_num(cheak_list,graph, k) : 
+def cheak_num(cheak_list,graph, k) :  # 반대로 가는 방법 1 -> k -> x ( 1-> 5 -> 4)
     global count
     global n
     num_cheak = []
     for i in range(1,n+1) :
         for e in cheak_list :
-            if graph[e][i] == 1 :
-                num_cheak.append(i)
+            if graph[e][i] == 1 : # graph[4][i가 1~5] 중에 연결 노드가 있는 i를
+                num_cheak.append(i) # num_cheak에 append
     print(num_cheak)
-    if k not in num_cheak :
+    if k not in num_cheak : # num_cheak 에 가야 되는 장소(k인 5)가 없으면 다시 함수 호출
         count += 1
         if count < m :
-            return(cheak_num(num_cheak, graph, k))
+            return(cheak_num(num_cheak, graph, k))  # 이 때 호출 된 함수에서 체크해야할 graph[num_cheak][1~5]
         else :
             return -1
     else :
@@ -40,7 +40,7 @@ def cheak_num(cheak_list,graph, k) :
         return count
 
 cheak_num([x],graph,k)
-cheak_num([k],graph,1)
+print(cheak_num([k],graph,1))
 
 '''
 1회차
