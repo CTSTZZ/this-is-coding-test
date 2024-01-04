@@ -2,6 +2,21 @@
 sunday
 saturday
 '''
+str1 = 'sunday'
+str2 = 'saturday'
+
+
+
+def solution(str1,str2) :
+    str1 = [i for i in str1]
+    str2 = [i for i in str2]
+
+    n = len(str1)
+    m = len(str2)
+
+    if n <= m :
+        count = m-n
+        
 
 def edit_dist(str1, str2) :
     n = len(str1)
