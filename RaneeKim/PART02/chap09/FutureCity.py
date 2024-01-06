@@ -36,3 +36,15 @@ for i in range(1, n+1) : # 책에는 i대신 k라고 적혀져있어서 입력�
 
 distance = graph[1][x] + graph[x][k]
 print(distance)
+
+
+'''
+graph[0][4]
+'''
+
+n = 4
+k = 5
+c = 0
+
+while graph[][k] :
+    
