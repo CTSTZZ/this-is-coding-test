@@ -1,10 +1,53 @@
-# 1->x, x->k 까지 가는 for문을 만들려고함
-# but 각자의 노선만큼 for문의 갯수가 필요한데 통일이 안됨
-# ex) 1 -> 4 -> 5 -> 2 의 노선이면 2까지이면 1->4, 4->5, 5->2 세번 , 5까지면  1->4, 4->5 등 기준이 없어 for문을 몇번 써야할지 확실하지 않음
-
 import sys
 input = sys.stdin.readline
 
+INF = int(1e9)
+n,m = map(int, input().split())
+
+graph = [[INF]*(n+1) for _ in range(n+1)]
+
+for a in range(1,n+1) :
+    for b in range(1,n+1) :
+        if a == b :
+            graph[a][b] = 0
+
+for _ in range(m) :
+    a,b = map(int, input().split())
+    graph[a][b] = 1
+    graph[b][a] = 1
+
+x,k = map(int, input().split()) 
+
+count = 0
+
+def cheak_num(cheak_list,graph, k) : 
+    global count
+    global n
+    num_cheak = []
+    for i in range(1,n+1) :
+        for e in cheak_list :
+            if graph[e][i] == 1 :
+                num_cheak.append(i)
+    print(num_cheak)
+    if k not in num_cheak :
+        count += 1
+        if count < m :
+            return(cheak_num(num_cheak, graph, k))
+        else :
+            return -1
+    else :
+        count += 1
+        return count
+
+cheak_num([x],graph,k)
+cheak_num([k],graph,1)
+
+'''
+1회차
+
+# 1->x, x->k 까지 가는 for문을 만들려고함
+# but 각자의 노선만큼 for문의 갯수가 필요한데 통일이 안됨
+# ex) 1 -> 4 -> 5 -> 2 의 노선이면 2까지이면 1->4, 4->5, 5->2 세번 , 5까지면  1->4, 4->5 등 기준이 없어 for문을 몇번 써야할지 확실하지 않음
 
 INF = int(1e9)
 
@@ -37,14 +80,4 @@ for i in range(1, n+1) : # 책에는 i대신 k라고 적혀져있어서 입력�
 distance = graph[1][x] + graph[x][k]
 print(distance)
 
-
 '''
-graph[0][4]
-'''
-
-n = 4
-k = 5
-c = 0
-
-while graph[][k] :
-    
