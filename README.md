@@ -20,7 +20,7 @@
     <td align="center"><a href="https://github.com/yelimkong"><img src="https://avatars.githubusercontent.com/yelimkong" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/raneeKim"><img src="https://avatars.githubusercontent.com/raneeKim" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/12L-zl"><img src="https://avatars.githubusercontent.com/12L-zl" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/Han-Yujin"><img src="https://avatars.githubusercontent.com/Han-Yujin" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/bonasoobin"><img src="https://avatars.githubusercontent.com/bonasoobin" width="130px;" alt=""></a></td>
 
   </tr>
   <tr>
