@@ -3,10 +3,10 @@ import sys
 input = sys.stdin.readline
 
 for tc in range(int(input().strip())) :
-    n = int(input().strip()) # 노드개수
+    n = int(input().strip()) # 학생수
     indegree = [0] * (n+1) # 진입차수 초기화
     graph = [[False]*(n+1) for _ in range(n+1)] # 각 학생들 순위 정보 초기화
-    data = list(map(int,input().split()))
+    data = list(map(int,input().split())) # 5 4 3 2 1
     for i in range(n) :
         for j in range(i+1,n) :
             graph[[data[i]][data[j]]] = True
@@ -29,23 +29,31 @@ graph[[data[1]][data[4]]] = graph[[4][1]] = True
 .
 행번호(→)의 학생이 열번호(↓)의 학생보다 순위가 높으면 True로 바꾸는 과정 
 
+  1 2 3 4 5
+1         T
+2       T T
+3       T T
+4         T
+5       
 indegree[data[j]] = indegree[4] += 1  -> [0 0 0 0 1 0] , 4번 학생보다 높은 번호가 몇개있는지 counting
 
 '''
 
 
 m = int(input().strip()) # 올해 변경된 순위 개수
-for i in range(m) :
+for _ in range(m) :
     a,b = map(int,input().split()) 
     if graph[a][b] : # 만약 a순위가 b순위 보다 높다면 -> if graph[a][b] == True
         graph[a][b] = False # a순위는 b순위보다 낮다로 바꾸고
+         
         graph[b][a] = True # 자연스럽게 b순위는 a순위보다 높다로 바뀜
         indegree[a] += 1 # a순위보다 큰 순위가 하나 더 추가 됐으므로 +1 (b가 더 커졌으므로)
         indegree[b] -= 1 # b순위는 a순위보다 커졌으므로 -1
-    else :
+    
+    else : # graph[2][4]
         graph[a][b] = True
         graph[b][a] = False
-        indegree[a] -= 1
+        indegree[a] -= 1 # [0,0,1,2,3,4] -> [0,0,1,1,3,4] -> [0,0,1,1,4,4]
         indegree[b] += 1
 
 result = []
@@ -77,7 +85,8 @@ for _ in range(n) :
     now = q.popleft()
     result.append(now)
     for j in range(1, n+1) :
-        if graph[now][j] :
+        if graph[now][j] : # now = 3, j = 1~5
+            # 5(0) > 3(0) > 2(1) > 4(2) > 1(3)
             indegree[j] -= 1 # now와 j의 순위를 확인했으니 진입차수를 -1
             if indegree[j] == 0 : # 확인할때 j = 0이라는건 j보다 순위가 높은 학생번호는 모두 확인했다는 뜻
                 q.append(j) # j의 순위도 확인 궈
