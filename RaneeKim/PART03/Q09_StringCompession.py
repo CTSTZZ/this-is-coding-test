@@ -1,5 +1,47 @@
-# 24
+import sys
+input = sys.stdin.readline
 
+
+
+'''
+def string() :
+    s = input().strip()
+    final_result = []
+    for i in range(1,(len(s)//2)+1) :
+        string_count = 1
+        while_count = 0
+        start = 0
+        cheak = (len(s) // i) - 1
+        result = ''
+        while while_count != cheak :
+            if s[start:start+i] == s[start+i:start+i+i] :
+                string_count += 1
+                while_count += 1
+                start += i
+            else :
+
+                if string_count != 1 : 
+                    result += (str(string_count) + s[start:start+i])
+                else :
+                    result += s[start:start+i]
+                
+                string_count = 1
+                while_count += 1
+                start += i
+            
+        if len(s) % i == 0 :
+            result +=  (str(string_count)+s[-(i):])
+        elif len(s) % i > 0 :
+            result += s[-(len(s)%i):]
+        
+        final_result.append(len(result))
+        print(result)
+    return final_result
+
+string()
+'''
+
+'''
 def solution(s):
     result = []
     for i in range(1,len(s)+1):
@@ -42,3 +84,4 @@ def solution(s):
 
 S = "abcabcabcabcdededededede" 
 def solution(S)
+'''
