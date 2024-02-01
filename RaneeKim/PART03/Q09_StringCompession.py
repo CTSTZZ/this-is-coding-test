@@ -1,7 +1,53 @@
 import sys
 input = sys.stdin.readline
 
+def string() :
+    s = input().strip()
+    final = []
+    for i in range(1,(len(s)//2)+1) :
+        cheak = []
+        while_cheak = 0
+        start = 0
+        while while_cheak <= len(s)//i :
+            cheak.append(s[start:start+i])
+            start += i
+            while_cheak += 1
+        final.append(cheak) 
+        # [['a', 'a', 'b', 'b', 'a', 'c', 'c', 'c', ''], 
+        # ['aa', 'bb', 'ac', 'cc', ''], ['aab', 'bac', 'cc'], ['aabb', 'accc', '']]
 
+    final_result = []
+    for f in final :
+        count = 1
+        result = ''        
+        for j in range(len(f)) :
+            try :
+                word_1 = f[j]
+                word_2 = f[j+1]
+                if word_1 == word_2 :
+                    count += 1
+                else :
+                    if count == 1  :
+                        result += word_1 
+                    else :
+                        result += (str(count)+word_1)
+                    count = 1
+            except :
+                pass
+        result += f[-1]
+        final_result.append(len(result))
+
+    return min(final_result)
+
+string()
+
+'''
+aabbaccc
+ababcdcdababcdcd
+abcabcdede
+abcabcabcabcdededededede
+xababcdcdababcdcd
+'''
 
 '''
 def string() :
