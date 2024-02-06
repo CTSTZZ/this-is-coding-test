@@ -8,13 +8,13 @@ def string() :
         cheak = []
         while_cheak = 0
         start = 0
-        while while_cheak <= len(s)//i :
+        while while_cheak <= len(s)//i :  # i = 1, 8/1 -> aab bac cc
             cheak.append(s[start:start+i])
             start += i
             while_cheak += 1
         final.append(cheak) 
-        # [['a', 'a', 'b', 'b', 'a', 'c', 'c', 'c', ''], 
-        # ['aa', 'bb', 'ac', 'cc', ''], ['aab', 'bac', 'cc'], ['aabb', 'accc', '']]
+        # [['a', 'a', 'b', 'b', 'a', 'c', 'c', 'c', ''],   2a2ba3c
+        # ['aa', 'bb', 'ac', 'cc', ''], aabbaccc ['aab', 'bac', 'cc'],aabbac ['aabb', 'accc', '']]aabbaccc
 
     final_result = []
     for f in final :
