@@ -31,5 +31,3 @@ def solution(n,weak,dist) :
     if answer > len(dist) : # 최종답이 친구수보다 많다면 -1 반환
         return -1
     return answer 
-
-

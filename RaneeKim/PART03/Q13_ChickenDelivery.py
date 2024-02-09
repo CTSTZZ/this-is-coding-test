@@ -1,6 +1,6 @@
 from itertools import combinations
 
-n,m = map(int, input().split())
+n,m = map(int, input().split()) # m이 치킨가게개수
 chicken , house = [],[]
 
 for r in range(n) :
@@ -11,7 +11,7 @@ for r in range(n) :
         elif data[c] == 2 :
             chicken.append((r,c))
 
-candidates = list(combinations(chicken,m))
+candidates = list(combinations(chicken,m)) 
 
 def get_sum(candidates) :
     result = 0
