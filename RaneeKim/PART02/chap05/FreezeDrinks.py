@@ -6,15 +6,14 @@ def solution(x,y) :
     if drinks[x][y] == 0 :
         drinks[x][y] = 1
 
-        solution(x+1,y)
-        solution(x,y+1)
-        solution(x-1,y)
-        solution(x,y-1)
+        solution(x+1,y) # 아래
+        solution(x,y+1) # 오른
+        solution(x-1,y) # 위
+        solution(x,y-1) # 왼
         
         return True
     
     return False
-
 
 
 n,m = map(int, input().split())
@@ -30,7 +29,7 @@ for _ in range(n) :
 result = 0
 for i in range(n) :
     for j in range(m) :
-        if solution(i,j,0) == True :
+        if solution(i,j) == True :
             result +=1
 
 print(result)
