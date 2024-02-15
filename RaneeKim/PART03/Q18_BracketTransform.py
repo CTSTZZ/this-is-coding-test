@@ -53,4 +53,4 @@ def solution(p) : \
 
 
 
-solution(pp) # ()(())()
+solution(pp) #()(())()
