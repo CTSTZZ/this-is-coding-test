@@ -13,17 +13,21 @@ for i in range(n) : # 방 크기의 길이 만큼 for문
         if board[i][j] == 'X' :
             spaces.append((i,j)) # 선생님과 학생외 빈 공간은 spaces 리스트에 append
 
-def watch(x,y,direction) : # x좌표, y좌표, 방향 (상:0  하:1  좌:2  우:3)
+# [['X', 'S', 'X', 'X', 'T'], ['T', 'X', 'S', 'X', 'X'], ['X', 'X', 'X', 'X', 'X'], ['X', 'T', 'X', 'X', 'X'], ['X', 'X', 'T', 'X', 'X']]
+# [(0, 4), (1, 0), (3, 1), (4, 2)]
+# [(0, 0), (0, 2), (0, 3), (1, 1), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 2), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]  
+
+def watch(x,y,direction) : # x좌표, y좌표, 방향 (좌:0  우:1  상:2  하:3)
     
     if direction == 0 : 
-        while y >= 0 : # 계속 위로 갈 예정 -> 방의 제일 위 좌표는 (x,0) 이므로 y가 0이상일때 까지 while문 돌리기
+        while y >= 0 : # 계속 왼쪽 갈 예정 -> 방의 제일 왼쪽 좌표는 (x,0) 이므로 y가 0 이상일때 까지 while문 돌리기
             if board[x][y] == 'S' :  # 학생 발견하면 True로 치환
                 return True
             if board[x][y] == 'O' : # 장애물 발견하면 False로 치환
                 return False
             y -= 1
-
-    if direction == 1 : # 계속 밑으로 갈 예정 -> 방의 제일 위 좌표는 (x,n-1) 이므로 y가 n 미만일때 까지 while문 돌리기
+                    
+    if direction == 1 : # 계속 오른쪽 으로 갈 예정 -> 방의 제일 오른쪽 좌표는 (x,n-1) 이므로 y가 n미만일때 까지 while문 돌리기
         while y < n :
             if board[x][y] == 'S' :
                 return True
@@ -31,7 +35,7 @@ def watch(x,y,direction) : # x좌표, y좌표, 방향 (상:0  하:1  좌:2  우:
                 return False
             y += 1
     
-    if direction == 2 : # 계속 왼쪽 갈 예정 -> 방의 제일 왼쪽 좌표는 (0,y) 이므로 x가 0 이상일때 까지 while문 돌리기
+    if direction == 2 : # 계속 위로 갈 예정 -> 방의 제일 위 좌표는 (0,y) 이므로 y가 0이상일때 까지 while문 돌리기
         while x >= 0 :
             if board[x][y] == 'S' :
                 return True
@@ -39,7 +43,7 @@ def watch(x,y,direction) : # x좌표, y좌표, 방향 (상:0  하:1  좌:2  우:
                 return False
             x -= 1
 
-    if direction == 3 : # # 계속 오른쪽 으로 갈 예정 -> 방의 제일 오른쪽 좌표는 (n-1,y) 이므로 x가 n 미만일때 까지 while문 돌리기
+    if direction == 3 : # 계속 밑으로 갈 예정 -> 방의 제일 위 좌표는 (n-1,y) 이므로 x가 n미만일때 까지 while문 돌리기
         while x < n :
             if board[x][y] == 'S' :
                 return True
