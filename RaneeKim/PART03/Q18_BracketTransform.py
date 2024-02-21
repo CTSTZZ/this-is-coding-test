@@ -1,5 +1,3 @@
-pp = '
-
 def good_balance(p): #  균형이 딱 맞을때의 index값을 뽑아냄 
     count = 0 
     for i in range(len(p)) :
