@@ -12,11 +12,27 @@ for i in range(n) : # 방 크기의 길이 만큼 for문
             teachers.append((i,j)) # teachers 리스트에 append
         if board[i][j] == 'X' :
             spaces.append((i,j)) # 선생님과 학생외 빈 공간은 spaces 리스트에 append
-
-# [['X', 'S', 'X', 'X', 'T'], ['T', 'X', 'S', 'X', 'X'], ['X', 'X', 'X', 'X', 'X'], ['X', 'T', 'X', 'X', 'X'], ['X', 'X', 'T', 'X', 'X']]
+'''
+[['X', 'S', 'X', 'X', 'T'],
+ ['T', 'X', 'S', 'X', 'X'], 
+ ['X', 'X', 'X', 'X', 'X'],
+ ['X', 'T', 'X', 'X', 'X'], 
+ ['X', 'X', 'T', 'X', 'X']]
+ 
 # [(0, 4), (1, 0), (3, 1), (4, 2)]
 # [(0, 0), (0, 2), (0, 3), (1, 1), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 2), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]  
+'''
 
+
+'''
+3X3
+
+(0,0) (0,1) (0,2)
+(1,0) (1,1) (1,2)
+(2,0) (2,1) (2,2)
+
+
+'''
 def watch(x,y,direction) : # x좌표, y좌표, 방향 (좌:0  우:1  상:2  하:3)
     
     if direction == 0 : 
@@ -35,7 +51,7 @@ def watch(x,y,direction) : # x좌표, y좌표, 방향 (좌:0  우:1  상:2  하:
                 return False
             y += 1
     
-    if direction == 2 : # 계속 위로 갈 예정 -> 방의 제일 위 좌표는 (0,y) 이므로 y가 0이상일때 까지 while문 돌리기
+    if direction == 2 : # 계속 위로 갈 예정 -> 방의 제일 위 좌표는 (0,y) 이므로 x가 0이상일때 까지 while문 돌리기
         while x >= 0 :
             if board[x][y] == 'S' :
                 return True
@@ -55,7 +71,7 @@ def watch(x,y,direction) : # x좌표, y좌표, 방향 (좌:0  우:1  상:2  하:
 
 # 장애물 설치 후 학생이 감지되는지 확인하는 함수
 def process() :
-
+    
     for x,y in teachers : # 각 선생님들의 좌표를 x,y로 받고
         for i in range(4) : # 각 선생님마다 상상상상, 하하하하하하... , 좌좌조ㅏ좌좌좌좌... ,  우우우우우ㅜ우우.. 확인
             if watch(x,y,i) : 
@@ -83,3 +99,4 @@ if find :
     print('True')
 else : 
     print('No')
+    

@@ -1,5 +1,5 @@
 n = int(input())
-data = list(map(int,input().split()))
+data = list(map(int,input().split())) # 1,2,3,4,5,6
 add, minus, mul, div = map(int,input().split())
 
 # 비교를 위해 
@@ -15,13 +15,13 @@ def solution(i,now) :
         maxx = max(maxx,now)
 
     else :
-        if add > 0 :
+        if add > 0 : # add 2 , minus 1, mul 1, div 1 
             add -= 1  # 한 번 add연산을 했으므로 -1
             solution(i+1, now + data[i])  # add연산은 -1 한 상태로 재귀함수로 두번째 solution함수를 호출
         # 함수호출 -> add=2 에서 1 -> 재귀함수호출 add=1 에서 0 -> 재귀함수호출 minus=1 에서 0 -> 재귀함수호출 mul=1 에서 0 ->...           
             add += 1 
             # 한 번 add연산한 상태는 재귀함수로 호출했으니, add 연산 count를 다시 초기화 하는 단계
-            
+            # - + + * /
         if minus > 0 :
             minus -= 1 
             solution(i+1, now - data[i])

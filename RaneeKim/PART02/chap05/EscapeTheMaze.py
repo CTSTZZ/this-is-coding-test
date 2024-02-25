@@ -1,6 +1,5 @@
 from collections import deque
 
-
 def solution(x,y) :   
 
     n,m = map(int, input().split())
@@ -10,7 +9,7 @@ def solution(x,y) :
         data = list(map(int,input()))
         maze.append(data)
 
-    dx = [-1,1,0,0]
+    dx = [-1,1,0,0] # 상하좌우
     dy = [0,0,-1,1]
 
     q = deque()
